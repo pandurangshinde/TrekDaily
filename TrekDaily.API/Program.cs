@@ -11,6 +11,13 @@ try
 
 	var app = builder.Build();
 
+	app.UseCors(builder =>
+	{
+		builder.WithOrigins("http://localhost:3000")
+			   .AllowAnyHeader()
+			   .AllowAnyMethod()
+			   .AllowCredentials(); // Add this line
+	});
 	app.MapGet("/", () => "Hello World!");
 
 	app.MapControllers();
