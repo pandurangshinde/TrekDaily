@@ -26,5 +26,12 @@ namespace TrekDaily.API1.Controllers
 		{
 			return BadRequest("This is a bad request");
 		}
+
+		//Add HttpGet methode to return Warning on purpose
+		[HttpGet("Warning")]
+		public IActionResult Warning()
+		{
+			return BadRequest("This is a warning message");
+		}
 	}
 }
