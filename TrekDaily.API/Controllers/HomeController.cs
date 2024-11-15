@@ -12,5 +12,11 @@ namespace TrekDaily.API1.Controllers
 		{
 			return Ok("Hello from the API!");
 		}
+
+		[HttpGet("Ping")]
+		public IActionResult Ping()
+		{
+			return Ok("Ping Test");
+		}
 	}
 }
