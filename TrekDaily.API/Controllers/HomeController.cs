@@ -16,7 +16,15 @@ namespace TrekDaily.API1.Controllers
 		[HttpGet("Ping")]
 		public IActionResult Ping()
 		{
-			return Ok("Ping Test");
+			//return current date and time UTC
+			return Ok(DateTime.UtcNow);
+		}
+
+		//Add HttpGet methode to return error on purpose
+		[HttpGet("Error")]
+		public IActionResult Error()
+		{
+			return BadRequest("This is a bad request");
 		}
 	}
 }
